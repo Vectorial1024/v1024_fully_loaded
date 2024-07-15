@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Add in the code to discourage trades that does not use the full cargo limit -->
+<diff>
+    <add sel="/aiscript[@name='trade.find.commander']/attention/actions/do_if[@value='$selloffers.count gt 0']/do_all/do_all/do_for_each/do_if[2]" pos="before">
+        <!-- Add code to adjust station-export-wares -->
+        <!-- This should be right after setting the tradevalue but before any checking can begin -->
+        <set_value name="$tradeVolume" exact="[$buyoffer_local.offeramount.{this.assignedcontrolled}, this.assignedcontrolled.cargo.{$buyoffer_local.ware}.free].min * $buyoffer_local.ware.volume" />
+        <set_value name="$cargoLimit" exact="this.assignedcontrolled.cargo.{$buyoffer_local.ware}.max * $buyoffer_local.ware.volume" />
+        <!-- cargoLimit shows the max that can be loaded onto a ship; if tradeVolume = maxVolume then we have a full load, and it is good. -->
+        <set_value name="$loctradevalue" exact="$loctradevalue * tradeVolume / $cargoLimit" comment="Discourage non-full-load trades" />
+        <remove_value name="$tradeVolume" comment="Out-of-scope variable removal" />
+        <remove_value name="$cargoLimit" comment="Out-of-scope variable removal" />
+    </add>
+
+    <add sel="/aiscript[@name='trade.find.commander']/attention/actions/do_if[@value='$buyoffers.count gt 0']/do_all/do_all/do_for_each/do_if[2]" pos="before">
+        <!-- Add code to adjust station-import-wares -->
+        <!-- This should be right after setting the tradevalue but before any checking can begin -->
+        <set_value name="$tradeVolume" exact="[$selloffer_local.offeramount.{this.assignedcontrolled}, this.assignedcontrolled.cargo.{$selloffer_local.ware}.free].min * $selloffer_local.ware.volume" />
+        <set_value name="$cargoLimit" exact="this.assignedcontrolled.cargo.{$selloffer_local.ware}.max * $selloffer_local.ware.volume" />
+        <!-- cargoLimit shows the max that can be loaded onto a ship; if tradeVolume = maxVolume then we have a full load, and it is good. -->
+        <set_value name="$loctradevalue" exact="$loctradevalue * tradeVolume / $cargoLimit" comment="Discourage non-full-load trades" />
+        <remove_value name="$tradeVolume" comment="Out-of-scope variable removal" />
+        <remove_value name="$cargoLimit" comment="Out-of-scope variable removal" />
+    </add>
+</diff>
