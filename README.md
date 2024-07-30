@@ -1,5 +1,10 @@
 # Fully Loaded
-(WIP) Subordinate traders prefer fully-loaded trade runs.
+Subordinate traders prefer fully-loaded trade runs.
+
+- Our GitHub repo: https://github.com/Vectorial1024/v1024_fully_loaded
+- Our EgoSoft Forums link: https://forum.egosoft.com/viewtopic.php?t=464437
+- Our Steam link: (WIP)
+- Our Nexus link: (WIP)
 
 (links etc)
 
