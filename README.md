@@ -3,10 +3,8 @@ Subordinate traders prefer fully-loaded trade runs.
 
 - Our GitHub repo: https://github.com/Vectorial1024/v1024_fully_loaded
 - Our EgoSoft Forums link: https://forum.egosoft.com/viewtopic.php?t=464437
-- Our Steam link: (WIP)
-- Our Nexus link: (WIP)
-
-(links etc)
+- Our Steam link: https://steamcommunity.com/sharedfiles/filedetails/?id=3299678598
+- Our Nexus link: https://www.nexusmods.com/x4foundations/mods/1462
 
 > Efficient logistics: that's how simple it is!
 
