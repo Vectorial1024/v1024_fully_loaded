@@ -6,7 +6,7 @@
         <!-- Add code to adjust station-export-wares -->
         <!-- This should be right after setting the tradevalue but before any checking can begin -->
         <set_value name="$tradeAmount" exact="[$buyoffer_local.offeramount.{this.assignedcontrolled}, this.assignedcontrolled.cargo.{$buyoffer_local.ware}.free].min" />
-        <set_value name="$maxCarryAmount" exact="this.assignedcontrolled.cargo.{$buyoffer_local.ware}.max * $buyoffer_local.ware.volume" />
+        <set_value name="$maxCarryAmount" exact="this.assignedcontrolled.cargo.{$buyoffer_local.ware}.max" />
         <!-- maxCarryAmount shows the max that can be loaded onto a ship; if tradeAmount = maxCarryAmount then we have a full load, and it is good. -->
         <do_if value="$maxCarryAmount gt 0" comment="$maxCarryAmount can be 0 if ship is considering impossible cargo; e.g. container ship considering ores">
             <set_value name="$loctradevalue" exact="$loctradevalue * ($tradeAmount * 1.0 / $maxCarryAmount)" comment="Discourage non-full-load trades" />
