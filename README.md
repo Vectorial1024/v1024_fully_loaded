@@ -8,7 +8,7 @@ Subordinate traders prefer fully-loaded trade runs.
 
 > Efficient logistics: that's how simple it is!
 
-## Notice
+## Deprecation Notice
 It turns out, station trading logic is much more problematic than the shallow observation of "does not use all of the cargo space".
 [Logistics Optimization](https://github.com/Vectorial1024/v1024_logistics_optimization) has been set up to better manage the relevant fixes to the station trading logic. Users are advised to remove this mod and use Logistics Optimization instead.
 
